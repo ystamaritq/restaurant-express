@@ -2,21 +2,36 @@ const express = require("express");
 const PORT = process.env.PORT || 8080;
 const app = express();
 const exphbs = require("express-handlebars");
+const path = require("path");
 
 //HandleBars Middleware
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-//main reservation handle bars (reservation route)
-app.get("/", (req, res) => res.render("index"));
+//Body Parser Middlware
 
-//reservation page
-app.get("/reservation", (req, res) =>
-	res.render("reservation", {
-		title: "Add Reservation",
+//this is to handle raw json
+app.use(express.json());
+//handle url encoded data and forms
+app.use(express.urlencoded({ extended: false }));
+
+//Set static folder
+app.use(express.static(path.join(__dirname, "public")));
+
+//main reservation handle bars (reservation route)
+app.get("/", (req, res) =>
+	res.render("index", {
+		title: "We have only 5 tables! Book your seat before they are all gone",
+		show_tables_btn: true,
+		show_reservation_btn: true,
 	})
 );
 
+//reservation api
+app.use("/api/tables", require("./routes/api/tables"));
+//reservation page
+app.use("/reservations", require("./routes/pages/reservations"));
+
 app.listen(PORT, () =>
-	console.log(`Example app listening at http://localhost:${PORT}`)
+	console.log(`App listening at http://localhost:${PORT}`)
 );
