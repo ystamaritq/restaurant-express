@@ -21,7 +21,7 @@
                 <hr>
                 <div class="d-flex justify-content-center">
                     {{#if show_tables_btn}}
-                    <input type="submit" value="View Tables" class="btn btn-primary mr-2">
+                    <a href="/tables" class="btn btn-primary">View Tables</a>
                     {{/if}}
                     {{#if show_reservation_btn}}
                     <a href="/reservations" class="btn btn-danger">Make Reservation</a>
@@ -37,6 +37,10 @@
         {{{ body }}}
     </div>
     <div class="d-flex flex-start flex-row ml-4">
+        {{#if show_clear_link}}
+        <a href="/api/tables" class="link text-dark mr-1">Clear Tables</a>
+        <span>|</span>
+        {{/if}}
         <a href="/api/tables" class="link text-dark mr-1">API Table Link</a>
         <span>|</span>
         <a href="/api/waitinglist" class="link text-dark ml-1">API Wait List</a>

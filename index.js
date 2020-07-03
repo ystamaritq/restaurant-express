@@ -36,6 +36,9 @@ app.use("/api/tables", require("./routes/api/tables"));
 //reservation page route "/reservations"
 app.use("/reservations", require("./routes/pages/reservations"));
 
+//tables page route "/tables"
+app.use("/tables", require("./routes/pages/tables"));
+
 //reservation page route "/reservations"
 app.use("/api/waitinglist", require("./routes/api/waitinglist"));
 

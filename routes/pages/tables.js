@@ -1,12 +1,13 @@
 const express = require("express");
 const router = express.Router();
 
-//reservation page
+//tables page
 router.get("/", (req, res) =>
-	res.render("reservation", {
-		title: "Make your reservation",
-		show_tables_btn: true,
+	res.render("tables", {
+		title: "View your tables",
 		show_home_btn: true,
+		show_reservation_btn: true,
+		show_clear_link: true,
 	})
 );
 

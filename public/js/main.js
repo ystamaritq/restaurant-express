@@ -5,6 +5,22 @@ function createReservation(event) {
 	const id = $("#id").val();
 	const phone = $("#phone").val();
 
+	if (name === null || name === "") {
+		alert("enter a valid name");
+	}
+
+	if (email === null || email === "") {
+		alert("enter a valid email");
+	}
+
+	if (phone === null || phone === "") {
+		alert("enter a valid phone");
+	}
+
+	if (id === null || id === "") {
+		alert("enter a valid id");
+	}
+
 	$.post(
 		"/api/tables",
 		{
@@ -19,11 +35,12 @@ function createReservation(event) {
 	);
 
 	event.preventDefault();
+
 	// clear the data
-	// name = $("#name").val("");
-	// email = $("#email").val("");
-	// id = $("#id").val("");
-	// phone = $("#phone").val("");
+	$("#name").val("");
+	$("#email").val("");
+	$("#id").val("");
+	$("#phone").val("");
 }
 
 $(document).ready(function () {
