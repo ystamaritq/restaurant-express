@@ -1,15 +1,18 @@
 const express = require("express");
-const PORT = process.env.PORT || 8080;
-const app = express();
 const exphbs = require("express-handlebars");
 const path = require("path");
+
+// Tells node that we are creating an "express" server
+const app = express();
+
+// Sets an initial port. We"ll use this later in our listener
+const PORT = process.env.PORT || 8080;
 
 //HandleBars Middleware
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
 //Body Parser Middlware
-
 //this is to handle raw json
 app.use(express.json());
 //handle url encoded data and forms
@@ -27,10 +30,14 @@ app.get("/", (req, res) =>
 	})
 );
 
-//reservation api
+//reservation api route "/api/tables"
 app.use("/api/tables", require("./routes/api/tables"));
-//reservation page
+
+//reservation page route "/reservations"
 app.use("/reservations", require("./routes/pages/reservations"));
+
+//reservation page route "/reservations"
+app.use("/api/waitinglist", require("./routes/api/waitinglist"));
 
 app.listen(PORT, () =>
 	console.log(`App listening at http://localhost:${PORT}`)

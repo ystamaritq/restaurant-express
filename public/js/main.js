@@ -1,3 +1,4 @@
+// creating a reservation on the client side
 function createReservation(event) {
 	const name = $("#name").val();
 	const email = $("#email").val();
@@ -16,7 +17,13 @@ function createReservation(event) {
 			console.log("Reservation created");
 		}
 	);
+
 	event.preventDefault();
+	// clear the data
+	// name = $("#name").val("");
+	// email = $("#email").val("");
+	// id = $("#id").val("");
+	// phone = $("#phone").val("");
 }
 
 $(document).ready(function () {
