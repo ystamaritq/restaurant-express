@@ -45,4 +45,12 @@ function createReservation(event) {
 
 $(document).ready(function () {
 	$("#reservation_form").submit(createReservation);
+	// $("#view-table").on(displayTables);
 });
+
+/* 
+C - create - POST
+R - read - GET
+U - update - PUT
+D - delete - DELETE
+*/

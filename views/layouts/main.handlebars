@@ -10,6 +10,8 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/style.css">
     <script src="https://kit.fontawesome.com/c502137733.js"></script>
+    <!-- jquery cdn -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -21,7 +23,7 @@
                 <hr class="bg-secondary">
                 <div class="d-flex justify-content-center">
                     {{#if show_tables_btn}}
-                    <a href="/tables" class="btn btn-primary mr-1">View Tables</a>
+                    <a href="/tables" class="btn btn-primary mr-1" id="view-table">View Tables</a>
                     {{/if}}
                     {{#if show_reservation_btn}}
                     <a href="/reservations" class="btn btn-danger ml-1">Make Reservation</a>
@@ -45,8 +47,6 @@
         <span>|</span>
         <a href="/api/waitinglist" class="link text-dark ml-1">API Wait List</a>
     </div>
-    <!-- jquery cdn -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="/js/main.js"></script>
 </body>
 
