@@ -4,7 +4,7 @@ const uuid = require("uuid");
 const tables = require("./../../data/tables");
 const waitinglist = require("./../../data/waitinglist");
 
-const maxNumOfTables = 3;
+const maxNumOfTables = 5;
 
 router.get("/", (req, res) => res.json(tables));
 
@@ -16,7 +16,12 @@ router.get("/", (req, res) => res.json(tables));
  * else, add to waiting list.
  */
 router.post("/", (req, res) => {
-	let table = { name: req.body.name };
+	let table = {
+		name: req.body.name,
+		email: req.body.email,
+		phone: req.body.phone,
+		id: req.body.id,
+	};
 	if (tables.length < maxNumOfTables) tables.push(table);
 	else waitinglist.push(table);
 	res.json(table);
