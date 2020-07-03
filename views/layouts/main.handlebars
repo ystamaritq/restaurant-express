@@ -18,16 +18,16 @@
             <div class="col-12 jumbotron team-heading bg-dark mb-0">
                 <h1 class="text-center text-light">Hot Restaurant</h1>
                 <h3 class="text-center mb-3 text-light">{{{title}}}</h3>
-                <hr>
+                <hr class="bg-secondary">
                 <div class="d-flex justify-content-center">
                     {{#if show_tables_btn}}
-                    <a href="/tables" class="btn btn-primary">View Tables</a>
+                    <a href="/tables" class="btn btn-primary mr-1">View Tables</a>
                     {{/if}}
                     {{#if show_reservation_btn}}
-                    <a href="/reservations" class="btn btn-danger">Make Reservation</a>
+                    <a href="/reservations" class="btn btn-danger ml-1">Make Reservation</a>
                     {{/if}}
                     {{#if show_home_btn}}
-                    <a href="/" class="btn btn-danger">Home</a>
+                    <a href="/" class="btn btn-danger ml-1">Home</a>
                     {{/if}}
                 </div>
             </div>
@@ -36,7 +36,7 @@
     <div class="container mt-4">
         {{{ body }}}
     </div>
-    <div class="d-flex flex-start flex-row ml-4">
+    <div class="d-flex justify-content-center flex-row ml-4">
         {{#if show_clear_link}}
         <a href="/api/tables" class="link text-dark mr-1">Clear Tables</a>
         <span>|</span>
