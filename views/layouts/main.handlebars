@@ -16,16 +16,24 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-12 jumbotron team-heading bg-dark mb-0">
-                <h1 class="text-center text-light">Book your seat before they are gone </h1>
-            </div class="">
-            <input type="submit" value="View Tables" class="btn btn-secondary btn-block">
-            <input type="submit" value="Make Reservation" class="btn btn-secondary btn-block">
+                <h1 class="text-center text-light">Hot Restaurant</h1>
+                <h3 class="text-center text-light">We have only 5 tables! Book your seat before they are all gone
+                </h3>
+                <hr>
+                <div class="d-flex justify-content-center">
+                    <input type="submit" value="View Tables" class="btn btn-primary mr-2">
+                    <input type="submit" value="Make Reservation" class="btn btn-danger">
+                </div>
+            </div>
         </div>
     </div>
     <div class="container mt-4">
-        {{!-- triple {{{ name here }}} --}}
-
         {{{ body }}}
+    </div>
+    <div class="d-flex flex-start flex-row ml-4">
+        <a href="/api/table" class="link text-dark mr-1">API Table Link</a>
+        <span>|</span>
+        <a href="/api/waitlist" class="link text-dark ml-1"> API Wait List</a>
     </div>
 </body>
 
