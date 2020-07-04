@@ -5,6 +5,15 @@ const waitinglist = require("./../../data/waitinglist");
 
 const maxNumOfTables = 5;
 
+/**
+ * Request main parts:
+ * - Url: /api/....
+ * - Method:  GET/POST/DELETE/PUT
+ * - Headers: key-value pairs
+ * - Body: key-value (values can be text or file)
+ * - Params: query params part of url
+ */
+
 router.get("/", (req, res) => res.json(tables));
 
 /**
