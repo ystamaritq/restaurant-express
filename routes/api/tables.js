@@ -1,6 +1,5 @@
 const express = require("express");
 const router = express.Router();
-const uuid = require("uuid");
 const tables = require("./../../data/tables");
 const waitinglist = require("./../../data/waitinglist");
 

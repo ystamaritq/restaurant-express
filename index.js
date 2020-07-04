@@ -1,6 +1,6 @@
 const express = require("express");
 const exphbs = require("express-handlebars");
-const path = require("path");
+// const path = require("path");
 
 // Tells node that we are creating an "express" server
 const app = express();
@@ -18,8 +18,8 @@ app.use(express.json());
 //handle url encoded data and forms
 app.use(express.urlencoded({ extended: false }));
 
-//Set static folder
-app.use(express.static(path.join(__dirname, "public")));
+// //Set static folder
+// app.use(express.static(path.join(__dirname, "public")));
 
 //main reservation handle bars (reservation route)
 app.get("/", (req, res) =>
@@ -45,3 +45,10 @@ app.use("/api/waitinglist", require("./routes/api/waitinglist"));
 app.listen(PORT, () =>
 	console.log(`App listening at http://localhost:${PORT}`)
 );
+
+/* Remember !!!!!!
+C - create - POST
+R - read - GET
+U - update - PUT
+D - delete - DELETE
+*/
