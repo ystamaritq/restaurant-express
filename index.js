@@ -42,9 +42,6 @@ app.use("/tables", require("./routes/pages/tables"));
 // waitinglist route
 app.use("/api/waitinglist", require("./routes/api/waitinglist"));
 
-// page clear api/clear route
-app.use("/api/clear", require("./routes/api/clear"));
-
 app.listen(PORT, () =>
 	console.log(`App listening at http://localhost:${PORT}`)
 );

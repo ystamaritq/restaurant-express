@@ -26,4 +26,11 @@ router.post("/", (req, res) => {
 	res.json(table);
 });
 
+router.delete("/", function (req, res) {
+	tables.length = 0;
+	waitinglist.length = 0;
+
+	res.json([{}]);
+});
+
 module.exports = router;
