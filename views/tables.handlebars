@@ -7,7 +7,7 @@
         </div>
     </div>
 </div>
-</div>
+
 <script>
     // show tables
     function displayTables() {
@@ -30,7 +30,20 @@
         });
     }
 
+    function clearTable() {
+        alert("Clearing...");
+
+        // Clear the tables on the server and then empty the elements on the client
+        $.ajax({ url: "/api/clear", method: "POST" }).then(function () {
+            $("#table-data").empty();
+        });
+    }
+
+
+
+
     $(document).ready(function () {
-        displayTables()
+        displayTables();
+        $("#clear").on("click", clearTable);
     });
 </script>

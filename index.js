@@ -39,8 +39,11 @@ app.use("/reservations", require("./routes/pages/reservations"));
 //tables page route "/tables"
 app.use("/tables", require("./routes/pages/tables"));
 
-//reservation page route "/reservations"
+// waitinglist route
 app.use("/api/waitinglist", require("./routes/api/waitinglist"));
+
+// page clear api/clear route
+app.use("/api/clear", require("./routes/api/clear"));
 
 app.listen(PORT, () =>
 	console.log(`App listening at http://localhost:${PORT}`)
